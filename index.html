@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Downloader</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      main {
+        height: 256px;
+        display: flex;
+        gap: 32px;
+      }
+
+      input,
+      button {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <canvas id="canvas" width="256" height="256"></canvas>
+
+      <form id="form">
+        <div class="form-element">
+          <label for="colorName">Color name</label>
+          <input type="text" id="colorName" value="Green" />
+        </div>
+
+        <div class="form-element">
+          <label for="color">HTML color value</label>
+          <input type="text" id="color" value="green" />
+        </div>
+        <button type="submit">Download</button>
+      </form>
+    </main>
+
+    <script>
+      const canvasElement = document.getElementById("canvas");
+      const canvasContext = canvasElement.getContext("2d");
+
+      const formElement = document.getElementById("form");
+      const colorNameInputElement = document.getElementById("colorName");
+      const colorInputElement = document.getElementById("color");
+
+      const render = (color = "black") => {
+        canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+        canvasContext.fillStyle = colorInputElement.value;
+        canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+      };
+
+      render();
+
+      colorInputElement.addEventListener("keyup", (evt) => {
+        console.log("change:", evt.target.value);
+        render(evt.target.value);
+      });
+
+      formElement.addEventListener("submit", (evt) => {
+        evt.preventDefault();
+
+        const link = document.createElement("a");
+        link.download = `${colorNameInputElement.value}.png`;
+        link.href = document.getElementById("canvas").toDataURL();
+        link.click();
+      });
+    </script>
+  </body>
+</html>
