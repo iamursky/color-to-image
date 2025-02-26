@@ -1,1 +1,11 @@
+# Dependencies
+.yarn/
+node_modules/
+yarn-debug.log*
+yarn-error.log*
+
+# Vite
+dist/
+
+# System Files
 .DS_Store

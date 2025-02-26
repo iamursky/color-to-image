@@ -6,6 +6,6 @@ Download any HTML color as 256x256 PNG image.
 
 ## Use Case
 
-Initially I created this tool to generate images for Quizlet cards, but maybe you'll find it usefull for something else.
+I created this tool to generate images for Quizlet cards, but maybe you'll find it usefull for something else.
 
 ![Quizlet cards demo](https://raw.githubusercontent.com/iamursky/coldown.iamursky.com/main/.github/demo.gif?raw=true)
