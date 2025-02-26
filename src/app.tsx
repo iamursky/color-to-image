@@ -2,6 +2,7 @@ import type { ChangeEvent, FC, FormEvent } from "react";
 
 import { closest } from "color-2-name";
 import { useCallback, useState } from "react";
+import { GitHub } from "./components/github";
 
 export const App: FC = () => {
   const [color, setColor] = useState<string>("#1db4ea");
@@ -33,6 +34,7 @@ export const App: FC = () => {
 
   return (
     <div className="flex h-screen items-center justify-center">
+      <GitHub repoUrl="https://github.com/iamursky/color-to-png" />
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <div className="relative h-48 w-48 overflow-hidden rounded-md border border-neutral-300">
           <input
