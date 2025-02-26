@@ -1,6 +1,6 @@
 # Color to PNG
 
-Download any HTML color as 256x256 PNG image.
+Download any color as 256x256 PNG image.
 
 ![Website screenshot](https://raw.githubusercontent.com/iamursky/coldown.iamursky.com/main/.github/screenshot.png?raw=true)
 
