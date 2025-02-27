@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "color-to-png",
+  "name": "color-to-image",
   "version": "2.0.0",
   "type": "module",
   "packageManager": "yarn@4.6.0",
